@@ -1,0 +1,4 @@
+magazine:
+    resource: "@MagazineBundle/Controller/"
+    type:     annotation
+    prefix:   /

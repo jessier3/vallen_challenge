@@ -3,11 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        	{% stylesheets '@MagazineBundle/Resources/public/css/*' filter='cssrewrite' %}
+		        <link rel="stylesheet" href="{{ asset_url }}" />
+		    {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+	    <div id="processing"><i class="fa fa-spinner fa-spin"></i></div>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+		    {% javascripts '@MagazineBundle/Resources/public/js/*' %}
+		        <script src="{{ asset_url }}"></script>
+		    {% endjavascripts %}
+		{% endblock %}
     </body>
 </html>
