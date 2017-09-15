@@ -1,0 +1,3 @@
+magazine_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MagazineBundle:Default:index }
